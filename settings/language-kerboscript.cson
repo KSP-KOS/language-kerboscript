@@ -1,0 +1,15 @@
+'.source.ks':
+  'editor':
+    'commentStart': '// '
+    'increaseIndentPattern': '(?x)
+       ^ .* \\{ [^}"\']* $
+      |^ .* \\( [^\\)"\']* $
+      |^ \\s* \\{ \\} $
+      '
+    'decreaseIndentPattern': '(?x)
+       ^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\}
+      |^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\)
+      '
+'.source.ks':
+  'editor':
+    'foldEndPattern': '(?<!\\*)\\*\\*/|^\\s*\\}'
