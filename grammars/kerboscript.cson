@@ -20,39 +20,39 @@
     'name': 'keyword.operator.arithmetic.ks'
   }
   {
-    'match': '\\b(and|not|or)\\b'
+    'match': '\\b(?i:(and|not|or))\\b'
     'name': 'keyword.operator.logical.ks'
   }
   {
-    'match': '\\b(function|set|lock|unlock|print|at|on|toggle|off|stage|clearscreen|add|remove|log|declare|switch|copy|from|rename|volume|file|delete|edit|run|compile|list|reboot|shutdown|unset|batch|deploy)\\b'
+    'match': '\\b(?i:(function|set|lock|unlock|print|at|on|toggle|off|stage|clearscreen|add|remove|log|declare|switch|copy|from|rename|volume|file|delete|edit|run|compile|list|reboot|shutdown|unset|batch|deploy))\\b'
     'name': 'keyword.control.ks'
   }
   {
-    'match': '\\b(if|else|when|then)\\b'
+    'match': '\\b(?i:(if|else|when|then))\\b'
     'name': 'keyword.control.conditional.ks'
   }
   {
-    'match': '\\b(break)\\b'
+    'match': '\\b(?i:(break))\\b'
     'name': 'keyword.control.statement.ks'
   }
   {
-    'match': '\\b(until|wait|preserve|for|in)\\b'
+    'match': '\\b(?i:(until|wait|preserve|for|in))\\b'
     'name': 'keyword.control.repeat.ks'
   }
   {
-    'match': '\\b(is|to)\\b'
+    'match': '\\b(?i:(is|to))\\b'
     'name': 'keyword.operator.assignment.ks'
   }
   {
-    'match': '\\b(Direction|List|Quaternion|Vector)\\b'
+    'match': '\\b(?i:(Direction|List|Quaternion|Vector))\\b'
     'name': 'storage.type.ks'
   }
   {
-    'match': '\\b(global|local|parameter)\\b'
+    'match': '\\b(?i:(global|local|parameter))\\b'
     'name': 'storage.modifier.ks'
   }
   {
-    'match': '\\b(true|false)\\b'
+    'match': '\\b(?i:(true|false))\\b'
     'name': 'constant.language.ks'
   }
   {
