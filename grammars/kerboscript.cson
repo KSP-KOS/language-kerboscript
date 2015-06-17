@@ -1,189 +1,274 @@
-'scopeName': 'source.ks'
-'fileTypes': [
-  'ks'
-]
+'scopeName': 'source.kerboscript'
 'name': 'KerboScript'
+'fileTypes': ['ks']
 'patterns': [
   {
-    'include': '#comments'
+    'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+    'name': 'constant.numeric.kerboscript'
   }
   {
-    'match': '\\.'
-    'name': 'punctuation.terminator.ks'
+    'comment': 'string literal'
+    'name': 'string.quoted.double.kerboscript'
+    'begin': '\\"'
+    'end': '\\"'
   }
   {
-    'match': '<\\=|>\\=|\\=|<|>|<>'
-    'name': 'keyword.operator.comparison.ks'
+    'comment': 'comment line'
+    'name': 'comment.line.double-slash.kerboscript'
+    'begin': '//'
+    'end': '\\n'
   }
   {
-    'match': '\\+|\\-|\\*|\\^|/|%'
-    'name': 'keyword.operator.arithmetic.ks'
+    'match': '(\\.)\\b'
+    'name': 'punctuation.terminator.kerboscript'
   }
   {
-    'match': '\\b(?i:(and|not|or))\\b'
-    'name': 'keyword.operator.logical.ks'
+    'comment': 'flow control conditional'
+    'name': 'keyword.control.conditional.kerboscript'
+    'match': '\\b(?i:(if|else|when|then|on))\\b'
   }
   {
-    'match': '\\b(?i:(function|set|lock|unlock|print|at|on|toggle|off|stage|clearscreen|add|remove|log|declare|switch|copy|from|rename|volume|file|delete|edit|run|compile|list|reboot|shutdown|unset|batch|deploy))\\b'
-    'name': 'keyword.control.ks'
+    'comment': 'flow control loop'
+    'name': 'keyword.control.repeat.kerboscript'
+    'match': '\\b(?i:(for|until))\\b'
   }
   {
-    'match': '\\b(?i:(if|else|when|then))\\b'
-    'name': 'keyword.control.conditional.ks'
+    'comment': 'flow control statement'
+    'name': 'keyword.control.statement.kerboscript'
+    'match': '\\b(?i:(break|preserve))\\b'
   }
   {
-    'match': '\\b(?i:(break))\\b'
-    'name': 'keyword.control.statement.ks'
+    'comment': 'boolean keyword'
+    'name': 'keyword.operator.logical.kerboscript'
+    'match': '\\b(?i:(and|or|not))\\b'
   }
   {
-    'match': '\\b(?i:(until|wait|preserve|for|in))\\b'
-    'name': 'keyword.control.repeat.ks'
+    'comment': 'comparison operator'
+    'name': 'keyword.operator.comparison.kerboscript'
+    'match': '(<\\=|>\\=|<|>|<>|\\=)'
   }
   {
-    'match': '\\b(?i:(is|to))\\b'
-    'name': 'keyword.operator.assignment.ks'
+    'comment': 'arithmetic operator'
+    'name': 'keyword.operator.arithmetic.kerboscript'
+    'match': '(\\+|\\-|\\*|/|\\^|\\(|\\))'
   }
   {
-    'match': '\\b(?i:(Direction|List|Quaternion|Vector))\\b'
-    'name': 'storage.type.ks'
+    'comment': 'mathematical constants'
+    'name': 'support.constant.kerboscript'
+    'match': '\\b(?i:(e|g|pi))\\b'
+  }
+  {
+    'comment': 'language constants'
+    'name': 'support.constant.kerboscript'
+    'match': '\\b(?i:(true|false|red|green|blue|yellow|cyan|magenta|purple|white|black))\\b'
+  }
+  {
+    'comment': 'assignment keywords'
+    'name': 'keyword.operator.assignment.kerboscript'
+    'match': '\\b(?i:(set|to|lock|unlock|declare|parameter|toggle|on|off))\\b'
   }
   {
     'match': '\\b(?i:(global|local|parameter))\\b'
-    'name': 'storage.modifier.ks'
+    'name': 'storage.modifier.kerboscript'
   }
   {
-    'match': '\\b(?i:(true|false))\\b'
-    'name': 'constant.language.ks'
+    'comment': 'support functions'
+    'name': 'support.function.kerboscript'
+    'match': '\\b(?i:(add|remove|stage|clearscreen|log|copy|rename|delete|edit|run|compile|reboot|shutdown|batch|deploy))\\b'
   }
   {
-    'match': '\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b'
-    'name': 'constant.numeric.ks'
+    'comment': 'support variables'
+    'name': 'constant.language.kerboscript'
+    'match': '\\b(?i:(rgb|rgba|waypoint|allwaypoints|nextnode|ship|soi|mapview|version|sessiontime|time|config))\\b'
   }
   {
-    'begin': '"'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.ks'
-    'end': '"'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.ks'
-    'name': 'string.quoted.double.ks'
-    'patterns': [
-      {
-        'include': '#string_escaped_char'
-      }
-    ]
+    'comment': 'version parameters'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\b(?i:(major|minor))'
   }
   {
-    'begin': '\''
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.ks'
-    'end': '\''
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.ks'
-    'name': 'string.quoted.single.ks'
-    'patterns': [
-      {
-        'include': '#string_escaped_char'
-      }
-    ]
+    'comment': 'bound variables'
+    'name': 'constant.language.kerboscript'
+    'match': '\\b(?i:(throttle|steering|wheelthrottle|wheelsteering|ship|target|encounter|alt|heading|prograde|retrograde|facing|maxthrust|velocity|geoposition|latitude|longitude|up|north|body|angularmomentum|angularvel|angularvelocity|commrange|mass|verticalspeed|surfacespeed|airspeed|vesselname|altitude|apoapsis|periapsis|sensor|srfprograde|srfrerograde|obt|status|vesselname))\\b'
+  }
+  {
+    'comment': 'bound toggleables'
+    'name': 'constant.language.kerboscript'
+    'match': '\\b(?i:(sas|rcs|gear|legs|chutes|lights|panels|brakes|abort|ag[1-9][0-9]|ag[0-9]))\\b'
+  }
+  {
+    'comment': 'alt structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\b(?i:(apoapsis|periapsis|radar))\\b'
+  }
+  {
+    'comment': 'eta structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\b(?i:(apoapsis|periapsis|transition))\\b'
+  }
+  {
+    'comment': 'list functions'
+    'name': 'support.function.kerboscript'
+    'match': '\\b(?i:(list|bodies|targets|resources|parts|engines|sensors|elements|dockingports|files|volumes))\\b'
+  }
+  {
+    'comment': 'directional functions'
+    'name': 'support.function.kerboscript'
+    'match': '\\b(?i:(r|q|heading|lookdirup|angleaxis|rotatefromto))\\b'
+  }
+  {
+    'comment': 'directional structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\b\\:(?i:(vector|forevector|topvector|upvector|starvector|rightvector|inverse))'
+  }
+  {
+    'comment': 'vector functions'
+    'name': 'support.function.kerboscript'
+    'match': '\\b(?i:(vdot|vectordotproduct|vcrs|vectorcrossproduct|vang|vectorangle|vxcl|vectorexclude))\\b'
+  }
+  {
+    'comment': 'vector structure member'
+    'match': '\\b\\:(?i:(x|y|z|normalized|sqrmagnitude|direction|vec))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'geographical structure member'
+    'match': '\\b\\:(?i:(lat|lng|distance|terrainheight|heading|bearing|position|altitudeposition))'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'orbit structure member'
+    'match': '\\b\\:(?i:(name|apoapsis|periapsis|body|period|inclination|eccentricity|semimajoraxis|semiminoraxis|lan|longitudeofascendingnode|argumentofperiapsis|trueanomaly|meananomalyatepoch|transition|position|velocity|nextpatch|hasnextpatch))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'orbitable structure member'
+    'match': '\\b\\:(?i:(orbit|surface|name|body|hasbody|hasorbit|hasobt|obt|up|north|prograde|srfprograde|retrograde|srfretrograde|position|velocity|distance|direction|latitude|longitude|altitude|geoposition|patches))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'atmosphere structure member'
+    'match': '\\b\\:(?i:(body|exists|oxygen|scale|sealevelpressure|height))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'body structure member'
+    'match': '\\b\\:(?i:(name|description|mass|altitude|rotationperiod|radius|mu|atm|angularvel|geopositionof|altitudeof))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'aggregateresource structure member'
+    'match': '\\b\\:(?i:(name|amount|capacity|parts))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'dockingport structure member'
+    'match': '\\b\\:(?i:(aquirerange|aquireforce|aquire|torque|reengageddistance|dockedshipname|portfacing|state|targetable))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'dockingport functions'
+    'match': '\\b(?i:(undock))'
+    'name': 'support.function.kerboscript'
+  }
+  {
+    'comment': 'engine structure member'
+    'match': '\\b\\:(?i:(thrustlimit|maxthrust|thrust|fuelflow|isp|flameout|ignition|allowrestart|allowshutdown|throttlelock))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'engine functions'
+    'match': '\\b(?i:(activate|shutdown))'
+    'name': 'support.function.kerboscript'
+  }
+  {
+    'comment': 'gimbal structure member'
+    'match': '\\b\\:(?i:(range|responsespeed|pitchangle|yawangle|rollangle|lock))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'maneuvernode structure member'
+    'match': '\\b\\:(?i:(deltav|burnvector|eta|prograde|radialout|normal|orbit))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'part structure member'
+    'match': '\\b\\:(?i:(name|title|mass|drymass|wetmass|tag|controlfrom|stage|uid|rotation|position|facing|resources|targetable|ship|modules|allmodules|parent|hasparent|hasphysics|children))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'part functions'
+    'match': '\\b(?i:(getmodule))'
+    'name': 'support.function.kerboscript'
+  }
+  {
+    'comment': 'partmodule structure member'
+    'match': '\\b\\:(?i:(name|part|allfields|allevents|allactions|hasfield|hasevent|hasaction))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'partmodule functions'
+    'match': '\\b(?i:(getfield|setfield|doevent|doaction))'
+    'name': 'support.function.kerboscript'
+  }
+  {
+    'comment': 'sensor structure member'
+    'match': '\\b\\:(?i:(active|type|readout|powerconsumption))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'sensor functions'
+    'match': '\\b(?i:(toggle))'
+    'name': 'support.function.kerboscript'
+  }
+  {
+    'comment': 'stage structure member'
+    'match': '\\b\\:(?i:(ready|number|resources))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'vessel structure member'
+    'match': '\\b\\:(?i:(control|bearing|heading|maxthrust|facing|mass|wetmass|drymass|verticalspeed|surfacespeed|airspeeed|termvelocity|shipname|name|angularmomentum|angularvel|sensors|loaded|patches|rootpart|parts|resources|partsnamed|partstitled|partstagged|partsdubbed|modulesnamed|partsingroup|modulesingroup|allpartstagged))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'vesselsensors structure member'
+    'match': '\\b\\:(?i:(acc|pres|temp|grav|light))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'resource structure member'
+    'match': '\\b\\:(?i:(name|amount|capacity|toggleable|enabled))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'waypoint structure member'
+    'match': '\\b\\:(?i:(name|body|geoposition|position|altitude|agl|nearsurface|grounded|index|clustered))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'rgba structure member'
+    'match': '\\b\\:(?i:(r|red|g|green|b|blue|a|alpha|html|hex))\\b'
+    'name': 'variable.parameter.kerboscript'
+  }
+  {
+    'comment': 'prediction functions'
+    'match': '\\b(?i:(positionat|velocityat|orbitat))'
+    'name': 'support.function.kerboscript'
+  }
+  {
+    'comment': 'mathematical functions'
+    'name': 'support.function.kerboscript'
+    'match': '\\b(?i:(abs|ceiling|floor|ln|log10|mod|min|max|round|sqrt|sin|cos|tan|arcsin|arccos|arctan|arctan2))\\b'
+  }
+  {
+    'comment': 'support types'
+    'name': 'support.type.kerboscript'
+    'match': '\\b(?i:(v|vector|direction|latlng))\\b'
+  }
+  {
+    'comment': 'other keywords'
+    'name': 'keyword.other.kerboscript'
+    'match': '\\b(?i:(print|at|from|volume|in|all))\\b'
   }
 ]
-'repository':
-  'access':
-    'captures':
-      '1':
-        'name': 'punctuation.separator.variable-access.ks'
-      '2':
-        'name': 'variable.other.dot-access.ks'
-    'match': '(\\:)([a-zA-Z_][a-zA-Z_0-9]*)\\b(?!\\s*\\()'
-  'block':
-    'patterns': [
-      {
-        'begin': '\\{'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.section.block.begin.ks'
-        'end': '\\}'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.section.block.end.ks'
-        'name': 'meta.block.ks'
-        'patterns': [
-          {
-            'include': '#block_innards'
-          }
-        ]
-      }
-    ]
-  'block_innards':
-    'patterns': [
-      {
-        'include': '#block'
-      }
-      {
-        'include': '$base'
-      }
-    ]
-  'comments':
-    'patterns': [
-      {
-        'captures':
-          '1':
-            'name': 'meta.toc-list.banner.line.ks'
-        'match': '^// =(\\s*.*?)\\s*=\\s*$\\n?'
-        'name': 'comment.line.banner.ks'
-      }
-      {
-        'begin': '(^[ \\t]+)?(?=//)'
-        'beginCaptures':
-          '1':
-            'name': 'punctuation.whitespace.comment.leading.ks'
-        'end': '(?!\\G)'
-        'patterns': [
-          {
-            'begin': '//'
-            'beginCaptures':
-              '0':
-                'name': 'punctuation.definition.comment.ks'
-            'end': '\\n'
-            'name': 'comment.line.double-slash.ks'
-            'patterns': [
-              {
-                'match': '(?>\\\\\\s*\\n)'
-                'name': 'punctuation.separator.continuation.ks'
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  'parens':
-    'begin': '\\('
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.section.parens.begin.ks'
-    'end': '\\)'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.section.parens.end.ks'
-    'name': 'meta.parens.ks'
-    'patterns': [
-      {
-        'include': '$base'
-      }
-    ]
-  'string_escaped_char':
-    'patterns': [
-      {
-        'match': '\\\\(\\\\|[abefnprtv\'"?]|[0-3]\\d{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8})'
-        'name': 'constant.character.escape.ks'
-      }
-      {
-        'match': '\\\\.'
-        'name': 'invalid.illegal.unknown-escape.ks'
-      }
-    ]

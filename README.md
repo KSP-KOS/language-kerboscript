@@ -1,6 +1,7 @@
 # KerboScript language support in Atom
 
-Adds syntax highlighting to KerboScript files in Atom.
+Adds syntax highlighting and code folding to KerboScript files
+in the [Atom](https://atom.io/) text editor.
 
 KerboScript is a language employed by the [kOS](http://ksp-kos.github.io/KOS_DOC/)
 scriptable autopilot system for [Kerbal Space Program](http://kerbalspaceprogram.com).
@@ -10,8 +11,12 @@ request if you would like to contribute improvements.
 
 # How to Install
 
-![Installation Screenshot](https://raw.githubusercontent.com/xeger/language-kerboscript/master/docs/install.png)
+1. Open Atom's Settings pane
+2. Click "Install"
+3. Type "KerboScript" into the filter
+4. Select this package and click "Install"
 
-# Screenshot
+# How to contribute
 
-![Screenshot](https://raw.githubusercontent.com/xeger/language-kerboscript/master/docs/code.png)
+1. Symlink this folder into ~/.atom/packages
+2. Restart Atom (or use its Reload command) to preview your changes in realtime

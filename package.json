@@ -1,18 +1,19 @@
 {
-  "version": "0.2.1",
   "name": "language-kerboscript",
-  "description": "Atom language support for KerboScript",
-  "homepage": "https://xeger.github.io/language-kerboscript",
+  "version": "0.3.0",
+  "description": "Syntax highlighting for KerboScript",
+  "license": "MIT",
+  "homepage": "https://github.com/xeger/language-kerboscript",
   "repository": {
     "type": "git",
     "url": "https://github.com/xeger/language-kerboscript.git"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/xeger/language-kerboscript/issues"
   },
   "engines": {
     "atom": "*",
     "node": "*"
-  }
+  },
+  "dependencies": {}
 }
