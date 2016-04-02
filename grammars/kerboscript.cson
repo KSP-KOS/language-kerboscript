@@ -79,7 +79,7 @@
   {
     'comment': 'support variables'
     'name': 'constant.language.kerboscript'
-    'match': '\\b(?i:(rgb|rgba|waypoint|allwaypoints|nextnode|ship|soi|mapview|version|sessiontime|time|config|terminal|eta))\\b'
+    'match': '\\b(?i:(rgb|rgba|waypoint|allwaypoints|nextnode|ship|soi|mapview|version|sessiontime|time|config|terminal|eta|addons))\\b'
   }
   {
     'comment': 'version parameters'
@@ -95,6 +95,11 @@
     'comment': 'bound toggleables'
     'name': 'constant.language.kerboscript'
     'match': '\\b(?i:(sas|rcs|gear|legs|chutes|lights|panels|brakes|abort|ag[1-9][0-9]|ag[0-9]))\\b'
+  }
+  {
+    'comment': 'base structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(tostring|hassuffix|suffixnames|isserializable|typename|istype|inheritance))\\b'
   }
   {
     'comment': 'alt structure members'
