@@ -79,7 +79,7 @@
   {
     'comment': 'support variables'
     'name': 'constant.language.kerboscript'
-    'match': '\\b(?i:(rgb|rgba|waypoint|allwaypoints|nextnode|ship|soi|mapview|version|sessiontime|time|config))\\b'
+    'match': '\\b(?i:(rgb|rgba|waypoint|allwaypoints|nextnode|ship|soi|mapview|version|sessiontime|time|config|terminal|eta|addons))\\b'
   }
   {
     'comment': 'version parameters'
@@ -97,14 +97,19 @@
     'match': '\\b(?i:(sas|rcs|gear|legs|chutes|lights|panels|brakes|abort|ag[1-9][0-9]|ag[0-9]))\\b'
   }
   {
+    'comment': 'base structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(tostring|hassuffix|suffixnames|isserializable|typename|istype|inheritance))\\b'
+  }
+  {
     'comment': 'alt structure members'
     'name': 'variable.parameter.kerboscript'
-    'match': '\\b(?i:(apoapsis|periapsis|radar))\\b'
+    'match': '\\:(?i:(apoapsis|periapsis|radar))\\b'
   }
   {
     'comment': 'eta structure members'
     'name': 'variable.parameter.kerboscript'
-    'match': '\\b(?i:(apoapsis|periapsis|transition))\\b'
+    'match': '\\:(?i:(apoapsis|periapsis|transition))\\b'
   }
   {
     'comment': 'list functions'
@@ -119,7 +124,7 @@
   {
     'comment': 'directional structure members'
     'name': 'variable.parameter.kerboscript'
-    'match': '\\b\\:(?i:(vector|forevector|topvector|upvector|starvector|rightvector|inverse))'
+    'match': '\\:(?i:(vector|forevector|topvector|upvector|starvector|rightvector|inverse))'
   }
   {
     'comment': 'vector functions'
@@ -128,82 +133,82 @@
   }
   {
     'comment': 'vector structure member'
-    'match': '\\b\\:(?i:(x|y|z|normalized|sqrmagnitude|direction|vec))\\b'
+    'match': '\\:(?i:(x|y|z|normalized|sqrmagnitude|direction|vec))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'geographical structure member'
-    'match': '\\b\\:(?i:(lat|lng|distance|terrainheight|heading|bearing|position|altitudeposition))'
+    'match': '\\:(?i:(lat|lng|distance|terrainheight|heading|bearing|position|altitudeposition))'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'orbit structure member'
-    'match': '\\b\\:(?i:(name|apoapsis|periapsis|body|period|inclination|eccentricity|semimajoraxis|semiminoraxis|lan|longitudeofascendingnode|argumentofperiapsis|trueanomaly|meananomalyatepoch|transition|position|velocity|nextpatch|hasnextpatch))\\b'
+    'match': '\\:(?i:(name|apoapsis|periapsis|body|period|inclination|eccentricity|semimajoraxis|semiminoraxis|lan|longitudeofascendingnode|argumentofperiapsis|trueanomaly|meananomalyatepoch|transition|position|velocity|nextpatch|hasnextpatch))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'orbitable structure member'
-    'match': '\\b\\:(?i:(orbit|surface|name|body|hasbody|hasorbit|hasobt|obt|up|north|prograde|srfprograde|retrograde|srfretrograde|position|velocity|distance|direction|latitude|longitude|altitude|geoposition|patches))\\b'
+    'match': '\\:(?i:(orbit|surface|name|body|hasbody|hasorbit|hasobt|obt|up|north|prograde|srfprograde|retrograde|srfretrograde|position|velocity|distance|direction|latitude|longitude|altitude|geoposition|patches))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'atmosphere structure member'
-    'match': '\\b\\:(?i:(body|exists|oxygen|scale|sealevelpressure|height))\\b'
+    'match': '\\:(?i:(body|exists|oxygen|scale|sealevelpressure|height))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'body structure member'
-    'match': '\\b\\:(?i:(name|description|mass|altitude|rotationperiod|radius|mu|atm|angularvel|geopositionof|altitudeof))\\b'
+    'match': '\\:(?i:(name|description|mass|altitude|rotationperiod|radius|mu|atm|angularvel|geopositionof|altitudeof))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'aggregateresource structure member'
-    'match': '\\b\\:(?i:(name|amount|capacity|parts))\\b'
+    'match': '\\:(?i:(name|amount|capacity|parts))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'dockingport structure member'
-    'match': '\\b\\:(?i:(aquirerange|aquireforce|aquire|torque|reengageddistance|dockedshipname|portfacing|state|targetable))\\b'
+    'match': '\\:(?i:(aquirerange|aquireforce|aquire|torque|reengageddistance|dockedshipname|portfacing|state|targetable))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'dockingport functions'
-    'match': '\\b(?i:(undock))'
+    'match': '\\:(?i:(undock))'
     'name': 'support.function.kerboscript'
   }
   {
     'comment': 'engine structure member'
-    'match': '\\b\\:(?i:(thrustlimit|maxthrust|thrust|fuelflow|isp|flameout|ignition|allowrestart|allowshutdown|throttlelock))\\b'
+    'match': '\\:(?i:(thrustlimit|maxthrust|thrust|fuelflow|isp|flameout|ignition|allowrestart|allowshutdown|throttlelock))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'engine functions'
-    'match': '\\b(?i:(activate|shutdown))'
+    'match': '\\:(?i:(activate|shutdown))'
     'name': 'support.function.kerboscript'
   }
   {
     'comment': 'gimbal structure member'
-    'match': '\\b\\:(?i:(range|responsespeed|pitchangle|yawangle|rollangle|lock))\\b'
+    'match': '\\:(?i:(range|responsespeed|pitchangle|yawangle|rollangle|lock))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'maneuvernode structure member'
-    'match': '\\b\\:(?i:(deltav|burnvector|eta|prograde|radialout|normal|orbit))\\b'
+    'match': '\\:(?i:(deltav|burnvector|eta|prograde|radialout|normal|orbit))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'part structure member'
-    'match': '\\b\\:(?i:(name|title|mass|drymass|wetmass|tag|controlfrom|stage|uid|rotation|position|facing|resources|targetable|ship|modules|allmodules|parent|hasparent|hasphysics|children))\\b'
+    'match': '\\:(?i:(name|title|mass|drymass|wetmass|tag|controlfrom|stage|uid|rotation|position|facing|resources|targetable|ship|modules|allmodules|parent|hasparent|hasphysics|children))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'part functions'
-    'match': '\\b(?i:(getmodule))'
+    'match': '\\:(?i:(getmodule))'
     'name': 'support.function.kerboscript'
   }
   {
     'comment': 'partmodule structure member'
-    'match': '\\b\\:(?i:(name|part|allfields|allevents|allactions|hasfield|hasevent|hasaction))\\b'
+    'match': '\\:(?i:(name|part|allfields|allevents|allactions|hasfield|hasevent|hasaction))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
@@ -213,7 +218,7 @@
   }
   {
     'comment': 'sensor structure member'
-    'match': '\\b\\:(?i:(active|type|readout|powerconsumption))\\b'
+    'match': '\\:(?i:(active|type|readout|powerconsumption))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
@@ -223,32 +228,32 @@
   }
   {
     'comment': 'stage structure member'
-    'match': '\\b\\:(?i:(ready|number|resources))\\b'
+    'match': '\\:(?i:(ready|number|resources))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'vessel structure member'
-    'match': '\\b\\:(?i:(control|bearing|heading|maxthrust|facing|mass|wetmass|drymass|verticalspeed|surfacespeed|airspeeed|termvelocity|shipname|name|angularmomentum|angularvel|sensors|loaded|patches|rootpart|parts|resources|partsnamed|partstitled|partstagged|partsdubbed|modulesnamed|partsingroup|modulesingroup|allpartstagged))\\b'
+    'match': '\\:(?i:(control|bearing|heading|maxthrust|facing|mass|wetmass|drymass|verticalspeed|surfacespeed|airspeeed|termvelocity|shipname|name|angularmomentum|angularvel|sensors|loaded|patches|rootpart|parts|resources|partsnamed|partstitled|partstagged|partsdubbed|modulesnamed|partsingroup|modulesingroup|allpartstagged))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'vesselsensors structure member'
-    'match': '\\b\\:(?i:(acc|pres|temp|grav|light))\\b'
+    'match': '\\:(?i:(acc|pres|temp|grav|light))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'resource structure member'
-    'match': '\\b\\:(?i:(name|amount|capacity|toggleable|enabled))\\b'
+    'match': '\\:(?i:(name|amount|capacity|toggleable|enabled))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'waypoint structure member'
-    'match': '\\b\\:(?i:(name|body|geoposition|position|altitude|agl|nearsurface|grounded|index|clustered))\\b'
+    'match': '\\:(?i:(name|body|geoposition|position|altitude|agl|nearsurface|grounded|index|clustered))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
     'comment': 'rgba structure member'
-    'match': '\\b\\:(?i:(r|red|g|green|b|blue|a|alpha|html|hex))\\b'
+    'match': '\\:(?i:(r|red|g|green|b|blue|a|alpha|html|hex))\\b'
     'name': 'variable.parameter.kerboscript'
   }
   {
@@ -269,6 +274,50 @@
   {
     'comment': 'other keywords'
     'name': 'keyword.other.kerboscript'
-    'match': '\\b(?i:(print|at|from|volume|in|all))\\b'
+    'match': '\\b(?i:(print|at|from|volume|in|all|readjson|writejson))\\b'
+  }
+  {
+    'name': 'storage.function.kerboscript'
+    'match': '\\b(?i:(function))\\b'
+  }
+  {
+    'comment': 'terminal structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(width|height|reverse|visualbeep|brightness|charwidth|charheight))\\b'
+  }
+  {
+    'comment': 'time span structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(clock|calendar|second|minute|hour|day|year|seconds))\\b'
+  }
+  {
+    'comment': 'collection types'
+    'name': 'support.type.kerboscript'
+    'match': '\\b(?i:(lexicon|list|queue|range|stack))\\b'
+  }
+  {
+    'comment': 'lexicon structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(add|casesensitive|case|clear|copy|dump|haskey|hasvalue|keys|values|length|remove))\\b'
+  }
+  {
+    'comment': 'list structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(add|insert|clear|copy|sublist|join|remove))\\b'
+  }
+  {
+    'comment': 'queue structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(push|pop|peek|clear|copy))\\b'
+  }
+  {
+    'comment': 'range structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(start|stop|step))\\b'
+  }
+  {
+    'comment': 'stack structure members'
+    'name': 'variable.parameter.kerboscript'
+    'match': '\\:(?i:(push|pop|peek|clear|copy))\\b'
   }
 ]
