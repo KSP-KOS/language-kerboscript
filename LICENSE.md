@@ -1,4 +1,5 @@
 Copyright (c) 2015 Tony Spataro
+Copyright (c) 2017 KSP-KOS contributors (https://github.com/KSP-KOS)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
