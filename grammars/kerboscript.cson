@@ -35,7 +35,7 @@
   {
     'comment': 'flow control statement'
     'name': 'keyword.control.statement.kerboscript'
-    'match': '\\b(?i:(break|preserve))\\b'
+    'match': '\\b(?i:(return|break|preserve))\\b'
   }
   {
     'comment': 'boolean keyword'
